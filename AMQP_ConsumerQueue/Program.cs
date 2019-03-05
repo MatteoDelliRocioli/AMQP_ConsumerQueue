@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
-using RabbitMQ.Client;
+﻿using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using System;
+using System.Text;
 
 namespace AMQP_ConsumerQueue
 {
@@ -33,7 +25,7 @@ namespace AMQP_ConsumerQueue
                     {
                         var body = ea.Body;
                         var message = Encoding.UTF8.GetString(body); // from original bytes sent by the sender to a human-readable string
-                        Console.WriteLine(" [x] received {0", message);
+                        Console.WriteLine(" [x] received {0}", message);
                     };
 
                     channel.BasicConsume(queue: "queueTest",        //declares where the consumer has to consume
