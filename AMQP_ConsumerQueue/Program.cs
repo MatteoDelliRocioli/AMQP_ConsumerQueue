@@ -38,7 +38,7 @@ namespace AMQP_ConsumerQueue
 
                     channel.BasicConsume(queue: "queueTest",        //declares where the consumer has to consume
                                             autoAck: true,          //sneds automatic-akcnowledgment
-                                            consumer: consumer);
+                                            consumer: consumer);    //assignes the consumer
 
                     Console.WriteLine("press [enter] to exit.");
                     Console.ReadLine();
